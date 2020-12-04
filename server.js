@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-//const { add, getFirstInArray } = require('./data');
+const { turnItemIntoString, placeStringIntoArray, stripAwayExcessCharacters, lookAtThePieces } = require('./utils');
+const { Stack } = require('./stack');
 
 
 app.use(express.json());
@@ -16,8 +17,6 @@ app.post('/lint', (req, res) =>{
     // console.log(add.JSON.stringify());
 
     res.send('Hi there!');
-
-
 
     if(item === '(' || '[' || '{') {
         // add item to the STACK
