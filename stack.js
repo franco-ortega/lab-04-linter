@@ -15,19 +15,18 @@ class Stack {
     pop() {
         const poppedItem = this.stack.pop();
         console.log('This item was popped: ' + poppedItem);
+        return poppedItem;
     }
   
     // look at item on top of stack
     peek() {
-        const lastItemIndex = this.stack.length;
-        console.log(lastItemIndex);
-
-        const lastItemNumber = parseInt(lastItemIndex);
-        console.log(lastItemNumber);
         console.log(this.stack);
 
-        // const [ ...most, last ] = this.stack;
-        // console.log(last);
+        // const lastItemIndex = this.stack.length;
+        // console.log(lastItemIndex);
+
+        // const lastItemNumber = parseInt(lastItemIndex);
+        // console.log(lastItemNumber);
 
         const [ lastItem ] = this.stack.slice(-1);
         console.log(lastItem)
@@ -37,14 +36,8 @@ class Stack {
 
   const testItem = new Stack;
   console.log(testItem);
-
-  testItem.push('free')
-  console.log(testItem);
   
   testItem.push('wind')
-  console.log(testItem);
-  
-  testItem.push('water')
   console.log(testItem);
   
   testItem.push('earth')

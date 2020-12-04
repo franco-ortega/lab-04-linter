@@ -19,6 +19,29 @@ app.post('/lint', (req, res) =>{
 
 
 
+    if(item === '(' || '[' || '{') {
+        // add item to the STACK
+    } else if(item === ')') {
+        // check to see if it matches item on TOP of STACK
+        // if it's a match, remove item from TOP of STACK
+        // if it's not a match, send the ERROR message
+    } else if(item === ']') {
+        // check to see if it matches item on TOP of STACK
+        // if it's a match, continue
+        // if it's not a match, send the ERROR message
+    } else if(item === '}') {
+        // check to see if it matches item on TOP of STACK
+        // if it's a match, continue
+        // if it's not a match, send the ERROR message
+     } else if(!item) {
+         // return SUCCESS message
+     } else {
+         // return ERROR message
+     }
+
+
+    
+
     // if (lintedItem === true) {
     //     const answer = {
     //         "success": true
