@@ -43,11 +43,44 @@ function checkStack(testStack) {
             "success": true
           };
     } else {
-        result = {
-            "error": "missing `{`"
-          };
+        return errorMessage(testStack);
     }
+    // } else {
+    //     result = {
+    //         "error": "missing `{`"
+    //       };
+    // }
     return result;
+}
+
+function errorMessage(remainingStack) {
+    console.log('This is the remainingStack:')
+    console.log(remainingStack);
+    const unmatchedItem = remainingStack.stack.slice(-1);
+    console.log(unmatchedItem[0]);
+    const missingItem = missingItemFinder(unmatchedItem[0])
+
+    result = {
+        error: `missing ${missingItem}`
+      };
+      return result
+}
+
+function missingItemFinder(unmatchedItem) {
+    if(unmatchedItem === '}') {
+        return '{'
+    } else if(unmatchedItem === '{') {
+        return '}'
+    } else if(unmatchedItem === ')') {
+        return '('
+    } else if(unmatchedItem === '(') {
+        return ')'
+    } else if(unmatchedItem === ']') {
+        return '['
+    } else if(unmatchedItem === '[') {
+        return ']'
+    }
+
 }
 
 
