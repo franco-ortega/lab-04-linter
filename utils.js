@@ -38,7 +38,7 @@ function stripAwayExcessCharacters(array) {
 function checkStack(testStack) {
     let result = 'start';
 
-    if(testStack.stack.length === 0) {
+    if(testStack.stack.length === 0 || undefined) {
         result = {
             "success": true
           };

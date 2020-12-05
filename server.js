@@ -5,7 +5,7 @@ const { linter } = require('./linter');
 
 app.use(express.json());
 
-app.post('/lint', (req, res) =>{
+app.post('/api/v1/lint', (req, res) =>{
     console.log('This is the START of the post ENDPOINT');
 
     // The item that will be posted needs to be checked for errors (I think???), but that happens later
@@ -14,11 +14,12 @@ app.post('/lint', (req, res) =>{
         speed: 'fast',
         parenthesis: '()'
     };
-    console.log('Below this line is the testObject');
-    console.log(testObject);
+    console.log('Below this line is the testObject.');
+    // console.log(testObject);
+    // console.log(testObject);
 
     // The item needs to be put through the functions to transform it into just the necessary characters
-    const stringyItem = turnItemIntoString(testObject);
+    const stringyItem = turnItemIntoString(req.body.code);
     const allCharacters = placeStringIntoArray(stringyItem)
     const remaingingCharacters = stripAwayExcessCharacters(allCharacters);
     const finalStack = linter(remaingingCharacters);

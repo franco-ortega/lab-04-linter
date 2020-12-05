@@ -21,6 +21,9 @@ class Stack {
     // look at item on top of stack
     peek() {
         console.log(this.stack);
+        const [ lastItem ] = this.stack.slice(-1);
+        console.log('LAST ITEM:')
+        console.log(lastItem)
 
         // const lastItemIndex = this.stack.length;
         // console.log(lastItemIndex);
@@ -28,8 +31,6 @@ class Stack {
         // const lastItemNumber = parseInt(lastItemIndex);
         // console.log(lastItemNumber);
 
-        const [ lastItem ] = this.stack.slice(-1);
-        console.log(lastItem)
         
     }
   }

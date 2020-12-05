@@ -19,27 +19,38 @@ function linter(strippedString) {
         } else if(item === '{') {
             // add item to the STACK
             testStack.push(item)
-        } else if(item === ')') {
+        } else if(item === ')' && testStack.pop() === '(') {
+            testStack.pop();
             // check to see if it matches item on TOP of STACK
             // if it's a match, remove item from TOP of STACK
             // if it's not a match, send the ERROR message
+        } else if(item === ')' && testStack.pop() !== '(') {
+            testStack.push(item);
+            // check to see if it matches item on TOP of STACK
+            // if it's a match, remove item from TOP of STACK
+            // if it's not a match, send the ERROR message
+        } else if(item === ']' && testStack.pop() === '[') {
             testStack.pop();
-        } else if(item === ']') {
             // check to see if it matches item on TOP of STACK
             // if it's a match, continue
             // if it's not a match, send the ERROR message
-            testStack.pop();
-        } else if(item === '}') {
+        } else if(item === ']' && testStack.pop() !== '[') {
+            testStack.push(item);
             // check to see if it matches item on TOP of STACK
             // if it's a match, continue
             // if it's not a match, send the ERROR message
+        } else if(item === '}' && testStack.pop() === '{') {
             testStack.pop();
-            // if(strippedString.slice(-1) === '{') {
-            //     console.log('SLICED BIT BELOW');
-            //     console.log(strippedString.slice(-1));
-            //     console.log(testStack.pop());
-            //     testStack.pop();
-            // }
+            // check to see if it matches item on TOP of STACK
+            // if it's a match, continue
+            // if it's not a match, send the ERROR message
+        } else if(item === '}' && testStack.pop() !== '{') {
+            testStack.push(item);
+            // check to see if it matches item on TOP of STACK
+            // if it's a match, continue
+            // if it's not a match, send the ERROR message
+        } else {
+            return false;
         }
     }
 
