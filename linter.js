@@ -49,18 +49,13 @@ function linter(strippedString) {
             // check to see if it matches item on TOP of STACK
             // if it's a match, continue
             // if it's not a match, send the ERROR message
-        } else {
-            return false;
         }
     }
-
     console.log('This is the testStack at the END')
     console.log(testStack)
 
     return testStack;
 }
-
-
 
 module.exports = {
     linter

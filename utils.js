@@ -45,19 +45,14 @@ function checkStack(testStack) {
     } else {
         return errorMessage(testStack);
     }
-    // } else {
-    //     result = {
-    //         "error": "missing `{`"
-    //       };
-    // }
     return result;
 }
 
 function errorMessage(remainingStack) {
-    console.log('This is the remainingStack:')
-    console.log(remainingStack);
+    //console.log('This is the remainingStack:')
+    //console.log(remainingStack);
     const unmatchedItem = remainingStack.stack.slice(-1);
-    console.log(unmatchedItem[0]);
+    //console.log(unmatchedItem[0]);
     const missingItem = missingItemFinder(unmatchedItem[0])
 
     result = {
@@ -80,32 +75,7 @@ function missingItemFinder(unmatchedItem) {
     } else if(unmatchedItem === '[') {
         return ']'
     }
-
 }
-
-
-// const testObject = {
-//     name: 'lila',
-//     hair: 'green',
-//     speed: 'swift',
-//     array: [1, 2, 3],
-//     parenthesis: '()'
-// }
-// console.log('Below this line is the testObject');
-// console.log(testObject);
-
-// const testString = turnItemIntoString(testObject);
-// console.log('Below this line is the testString');
-// console.log(testString);
-
-// const arrayString = placeStringIntoArray(testString)
-// console.log('Below this line is the arrayString');
-// console.log(arrayString);
-
-// const strippedString = stripAwayExcessCharacters(arrayString);
-
-// console.log('Below this line is the strippedString');
-// console.log(strippedString);
 
 module.exports = {
     turnItemIntoString,

@@ -29,31 +29,8 @@ class Stack {
         // console.log(lastItemIndex);
 
         // const lastItemNumber = parseInt(lastItemIndex);
-        // console.log(lastItemNumber);
-
-        
+        // console.log(lastItemNumber); 
     }
   }
 
-//   const testItem = new Stack;
-//   console.log(testItem);
-  
-//   testItem.push('wind')
-//   console.log(testItem);
-  
-//   testItem.push('earth')
-//   console.log(testItem);
-
-//   testItem.push('pizza')
-//   console.log(testItem);
-
-//   testItem.push('pumkpin pie')
-//   console.log(testItem);
-
-//   testItem.pop();
-//   console.log(testItem);
-  
-//   testItem.peek();
-//   console.log(testItem);
-  
   module.exports = Stack;

@@ -15,8 +15,6 @@ app.post('/api/v1/lint', (req, res) =>{
         parenthesis: '()'
     };
     console.log('Below this line is the testObject.');
-    // console.log(testObject);
-    // console.log(testObject);
 
     // The item needs to be put through the functions to transform it into just the necessary characters
     const stringyItem = turnItemIntoString(req.body.code);
@@ -30,53 +28,6 @@ app.post('/api/v1/lint', (req, res) =>{
     res.send(stackResult);
 })
 
-
 app.listen(1234, () => {
     console.log('started on PORT 1234');
 })
-
-
-
-
-
-
-
-
-    // const testObject = req.body;
-    // console.log('Below this line is the posted testObject');
-    // console.log(testObject)
-
-    //console.log(stringyItem);
-    //console.log(allCharacters);
-    // console.log('Below this line is the remaingingCharacters');
-    // console.log(remaingingCharacters);
-
-
-
-
-
-
-
-    
-
-
-
-// app.get('/', (req, res) =>{
-//     console.log(req.body);
-//     res.send('Hi there!');
-// })
-
-
-    // if (lintedItem === true) {
-    //     const answer = {
-    //         "success": true
-    //       };
-    //       return answer;
-    // } else if (lintedItem = false) {
-    //     const answer = {
-    //         "error": "missing `{`"
-    //       };
-    //       return answer;
-    // }
-    // res.send(answer);
-
